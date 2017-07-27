@@ -1,0 +1,10 @@
+21.85
+player1
+28.95
+player2
+25.26
+player3
+6.78
+player4
+3.04
+player5
