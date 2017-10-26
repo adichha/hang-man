@@ -10,16 +10,7 @@ import javax.swing.SwingConstants;
 
 
 public class winScreen extends javax.swing.JFrame {
-/*
-Name: Advitya Chhabra
-Date: July 26 2017
-Assignment: Summative
-Purpose: Create a working hangman game
-Screen purpose: This is the screen that is displayed when the user wins,
-                it takes the user's name and writes it to an external file
-*/
-    
-//creates an arraylist with the type player    
+ 
 ArrayList <players> playerScores = new ArrayList ();
 public static double time, multiplier;
 DecimalFormat x = new DecimalFormat("#.00");
@@ -30,7 +21,7 @@ DecimalFormat x = new DecimalFormat("#.00");
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
 
         lblTitle1 = new javax.swing.JLabel();
@@ -42,23 +33,23 @@ DecimalFormat x = new DecimalFormat("#.00");
         lblTitle = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
 
-        lblTitle1.setFont(new java.awt.Font("Brush Script MT", 1, 48)); // NOI18N
+        lblTitle1.setFont(new java.awt.Font("Brush Script MT", 1, 48)); 
         lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle1.setText("Hangman");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblName.setFont(new java.awt.Font("Brush Script MT", 1, 24)); // NOI18N
+        lblName.setFont(new java.awt.Font("Brush Script MT", 1, 24)); 
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Enter Name:");
 
-        txtInput.setFont(new java.awt.Font("Candara", 0, 18)); // NOI18N
+        txtInput.setFont(new java.awt.Font("Candara", 0, 18)); 
 
-        lblTime.setFont(new java.awt.Font("Brush Script MT", 1, 18)); // NOI18N
+        lblTime.setFont(new java.awt.Font("Brush Script MT", 1, 18)); 
         lblTime.setForeground(new java.awt.Color(255, 255, 255));
 
         btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setFont(new java.awt.Font("Brush Script Std", 0, 24)); // NOI18N
+        btnSubmit.setFont(new java.awt.Font("Brush Script Std", 0, 24)); 
         btnSubmit.setForeground(new java.awt.Color(0, 0, 255));
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -67,11 +58,11 @@ DecimalFormat x = new DecimalFormat("#.00");
             }
         });
 
-        lblTitle.setFont(new java.awt.Font("Brush Script MT", 1, 36)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Brush Script MT", 1, 36)); 
         lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setText("You guessed the word!");
 
-        lblBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Advitya\\Documents\\FinalProject_AChhabra\\src\\background.jpg")); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Advitya\\Documents\\FinalProject_AChhabra\\src\\background.jpg")); 
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -128,13 +119,7 @@ DecimalFormat x = new DecimalFormat("#.00");
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    /*
-    Clicking this button takes the user's name and score and writes it to an external scoresheet. The
-    preconditon for this button is that the user must win the game and enter their name in the textbox.
-    The user's name and score are added as elements of an object, with that object being the player
-    */
+    }
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         players scores;
         String name, score;
@@ -142,11 +127,9 @@ DecimalFormat x = new DecimalFormat("#.00");
         name = this.txtInput.getText();
         score = x.format((time*multiplier));
         
-        //adds the object to the object array
         scores = new players(name, score);
         playerScores.add(scores);
         
-        //runs the highscore method
         try {
              highScores(playerScores);
          } catch (IOException ex) {
@@ -157,14 +140,7 @@ DecimalFormat x = new DecimalFormat("#.00");
         start.setVisible(true);
         this.dispose();
     
-    }//GEN-LAST:event_btnSubmitActionPerformed
-    
-    /*
-    This method takes the object array which is the players, their names and their
-    scores and it writes it to an external score sheet, which is an external text file.
-    The preconditions to this method is that the user must win and enter their name. 
-    An object of the user is then created and put in an object array.
-    */
+    }
     public void highScores(ArrayList<players> playerScores) throws IOException{
         for (int i = 0; i < playerScores.size(); i++) {
             write(playerScores.get(i));
@@ -180,21 +156,13 @@ DecimalFormat x = new DecimalFormat("#.00");
         }
     }
 
-    /*
-    This method takes the time that the user took to guess the word and outputs 
-    it as their score. Precondition same as last method.
-    */
     public void time(double passed){
     this.lblTime.setText("It took you "+ x.format(passed)+ " seconds!");
     lblTime.setHorizontalAlignment(SwingConstants.CENTER);
     
     time=passed;
     }     
-    
-    /*
-    This method calculates the score of the user depending on the level they chose
-    to play.Precondition same as last method.
-    */
+
     public void scoreMultiplier(String difficulty){
     
         if(difficulty.equals("e"))
@@ -204,10 +172,7 @@ DecimalFormat x = new DecimalFormat("#.00");
         else if(difficulty.equals("h"))
             multiplier= 0.7;
     }
-    /*
-    This class defines the type player. Each object that is a player has a name
-    and score
-    */
+    
     class players {
 
         String name, score;
@@ -220,11 +185,7 @@ DecimalFormat x = new DecimalFormat("#.00");
     }
     
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+ 
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -241,9 +202,7 @@ DecimalFormat x = new DecimalFormat("#.00");
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(winScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new winScreen().setVisible(true);
@@ -252,7 +211,6 @@ DecimalFormat x = new DecimalFormat("#.00");
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBackground;
@@ -261,5 +219,5 @@ DecimalFormat x = new DecimalFormat("#.00");
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblTitle1;
     private javax.swing.JTextField txtInput;
-    // End of variables declaration//GEN-END:variables
+
 }

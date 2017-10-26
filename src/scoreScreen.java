@@ -10,19 +10,13 @@ import java.util.logging.Logger;
 import javax.swing.SwingConstants;
 
 public class scoreScreen extends javax.swing.JFrame {
-/*
-Name: Advitya Chhabra
-Date: July 26 2017
-Assignment: Summative
-Purpose: Create a working hangman game
-Screen purpose: The screen where the user can check their score
-*/
+
     public scoreScreen() {
         initComponents();
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
 
         lblScores = new javax.swing.JLabel();
@@ -36,12 +30,12 @@ Screen purpose: The screen where the user can check their score
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblScores.setFont(new java.awt.Font("Brush Script MT", 1, 48)); // NOI18N
+        lblScores.setFont(new java.awt.Font("Brush Script MT", 1, 48)); 
         lblScores.setForeground(new java.awt.Color(255, 255, 255));
         lblScores.setText("Scores");
 
         btnExport.setBackground(new java.awt.Color(255, 255, 255));
-        btnExport.setFont(new java.awt.Font("Brush Script Std", 0, 24)); // NOI18N
+        btnExport.setFont(new java.awt.Font("Brush Script Std", 0, 24)); 
         btnExport.setForeground(new java.awt.Color(0, 0, 255));
         btnExport.setText("Export");
         btnExport.addActionListener(new java.awt.event.ActionListener() {
@@ -51,7 +45,7 @@ Screen purpose: The screen where the user can check their score
         });
 
         btnSearch.setBackground(new java.awt.Color(255, 255, 255));
-        btnSearch.setFont(new java.awt.Font("Brush Script Std", 0, 24)); // NOI18N
+        btnSearch.setFont(new java.awt.Font("Brush Script Std", 0, 24)); 
         btnSearch.setForeground(new java.awt.Color(0, 0, 255));
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +55,7 @@ Screen purpose: The screen where the user can check their score
         });
 
         btnMenu.setBackground(new java.awt.Color(255, 255, 255));
-        btnMenu.setFont(new java.awt.Font("Brush Script Std", 0, 24)); // NOI18N
+        btnMenu.setFont(new java.awt.Font("Brush Script Std", 0, 24)); 
         btnMenu.setForeground(new java.awt.Color(0, 0, 255));
         btnMenu.setText("Back");
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -70,16 +64,16 @@ Screen purpose: The screen where the user can check their score
             }
         });
 
-        lblOutput.setFont(new java.awt.Font("Candara", 1, 18)); // NOI18N
+        lblOutput.setFont(new java.awt.Font("Candara", 1, 18)); 
         lblOutput.setForeground(new java.awt.Color(255, 255, 255));
 
-        txtInput.setFont(new java.awt.Font("Candara", 0, 18)); // NOI18N
+        txtInput.setFont(new java.awt.Font("Candara", 0, 18)); 
 
-        lblTitle.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Candara", 1, 24)); 
         lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setText("Enter your name:");
 
-        lblBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Advitya\\Documents\\FinalProject_AChhabra\\src\\background.jpg")); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Advitya\\Documents\\FinalProject_AChhabra\\src\\background.jpg")); 
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,10 +142,8 @@ Screen purpose: The screen where the user can check their score
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
-    
-    //When this button is clicked the contents of the score sheet are sorted so they can be saved, precondition is that there must be scores to sort
-    private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
+    }
+    private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {
        try {
             sortFile();
         } catch (IOException ex) {
@@ -159,15 +151,8 @@ Screen purpose: The screen where the user can check their score
         }
 
         System.exit(0);
-    }//GEN-LAST:event_btnExportActionPerformed
-
-    /*
-    Clicking this button, searches through the external text file to see if it contains the name of a user.
-    It works by reading line by line through the textfile, it adds the player's names to one file and their
-    score to another file. It then finds the user's name in the name array and retrives the element with the
-    same index number in the scores array. It then outputs the user's score.
-    */
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+    }
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {
         ArrayList <String> playerName = new ArrayList <>();
         ArrayList <String> playerScore = new ArrayList<>();
         int counter=0;
@@ -181,9 +166,7 @@ Screen purpose: The screen where the user can check their score
             String score;
             while ((score = br.readLine()) != null ){
                 
-                /*
-                player scores are added to one array and their names are added to another
-                */
+ 
                 if(counter%2==0){
                 playerScore.add(score);
                 }
@@ -217,19 +200,15 @@ Screen purpose: The screen where the user can check their score
         
         this.lblOutput.setText(message);
         lblOutput.setHorizontalAlignment(SwingConstants.CENTER);
-    }//GEN-LAST:event_btnSearchActionPerformed
-    //When this button is clicked, the page switches to the opening screen
-    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+    }
+    
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {
 
         openingScreen start= new openingScreen();
         start.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnMenuActionPerformed
+    }
 
-     /*
-    The following method searches through an array for a String and returns the index of the string, if the
-    string is not in the array it reults -1.
-    */
     public static int sortedLinearSearch (String [ ] A, String V) {
     for (int k=0; k<A.length; k++) {
         int compare = A[k].compareTo(V);
@@ -239,12 +218,7 @@ Screen purpose: The screen where the user can check their score
     }
     return -1;
 }
-    
-    /*
-    The following method sorts the contents of the scoresheet, it reads the contents of the file row by row,
-    adds it all to an arraylist and sorts that arraylist, it then writes the new arraylist to the file The 
-    precondition is that the file must contain records to be sorted, meaning that the game must be played.
-    */
+
     public static void sortFile() throws IOException
 {   
     FileReader fileReader = new FileReader("scores.txt");
@@ -267,11 +241,7 @@ Screen purpose: The screen where the user can check their score
     
     
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+  
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -288,9 +258,7 @@ Screen purpose: The screen where the user can check their score
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(scoreScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new scoreScreen().setVisible(true);
@@ -298,7 +266,6 @@ Screen purpose: The screen where the user can check their score
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnBack1;
     private javax.swing.JButton btnBack2;
@@ -310,5 +277,5 @@ Screen purpose: The screen where the user can check their score
     private javax.swing.JLabel lblScores;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTextField txtInput;
-    // End of variables declaration//GEN-END:variables
+
 }

@@ -1,12 +1,5 @@
 public class openingScreen extends javax.swing.JFrame {
-/*
-Name: Advitya Chhabra
-Date: July 26 2017
-Assignment: Summative
-Purpose: Create a working hangman game
-Screen purpose: This is the opening screen of the game, 
-                it gives the user options as to what they wish to do
-*/
+
     public static String difficulty;
 
     public openingScreen() {
@@ -15,7 +8,7 @@ Screen purpose: This is the opening screen of the game,
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
 
         groupLevel = new javax.swing.ButtonGroup();
@@ -55,7 +48,7 @@ Screen purpose: This is the opening screen of the game,
         btnPlayGame.setBounds(160, 140, 90, 33);
 
         btnScores.setBackground(new java.awt.Color(255, 255, 255));
-        btnScores.setFont(new java.awt.Font("Brush Script Std", 0, 24)); // NOI18N
+        btnScores.setFont(new java.awt.Font("Brush Script Std", 0, 24));
         btnScores.setForeground(new java.awt.Color(0, 0, 255));
         btnScores.setText("Score");
         btnScores.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +59,7 @@ Screen purpose: This is the opening screen of the game,
         panelLayout.add(btnScores);
         btnScores.setBounds(160, 220, 90, 33);
 
-        lblTitle1.setFont(new java.awt.Font("Brush Script MT", 1, 48)); // NOI18N
+        lblTitle1.setFont(new java.awt.Font("Brush Script MT", 1, 48));
         lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle1.setText("Hangman");
         panelLayout.add(lblTitle1);
@@ -74,27 +67,27 @@ Screen purpose: This is the opening screen of the game,
 
         btnHard.setBackground(new java.awt.Color(0, 204, 0));
         groupLevel.add(btnHard);
-        btnHard.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
+        btnHard.setFont(new java.awt.Font("Candara", 0, 14)); 
         btnHard.setText("Hard");
         panelLayout.add(btnHard);
         btnHard.setBounds(290, 270, 80, 27);
 
         btnEasy.setBackground(new java.awt.Color(0, 204, 0));
         groupLevel.add(btnEasy);
-        btnEasy.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
+        btnEasy.setFont(new java.awt.Font("Candara", 0, 14)); 
         btnEasy.setText("Easy");
         panelLayout.add(btnEasy);
         btnEasy.setBounds(120, 270, 80, 27);
 
         btnMedium.setBackground(new java.awt.Color(0, 204, 0));
         groupLevel.add(btnMedium);
-        btnMedium.setFont(new java.awt.Font("Candara", 0, 14)); // NOI18N
+        btnMedium.setFont(new java.awt.Font("Candara", 0, 14)); 
         btnMedium.setText("Medium");
         panelLayout.add(btnMedium);
         btnMedium.setBounds(200, 270, 80, 27);
 
         btnRules.setBackground(new java.awt.Color(255, 255, 255));
-        btnRules.setFont(new java.awt.Font("Brush Script Std", 0, 24)); // NOI18N
+        btnRules.setFont(new java.awt.Font("Brush Script Std", 0, 24)); 
         btnRules.setForeground(new java.awt.Color(0, 0, 255));
         btnRules.setText("Rules");
         btnRules.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +98,7 @@ Screen purpose: This is the opening screen of the game,
         panelLayout.add(btnRules);
         btnRules.setBounds(160, 180, 90, 33);
 
-        lblBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Advitya\\Documents\\FinalProject_AChhabra\\src\\background.jpg")); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Advitya\\Documents\\FinalProject_AChhabra\\src\\background.jpg")); 
         panelLayout.add(lblBackground);
         lblBackground.setBounds(0, 0, 400, 300);
 
@@ -123,27 +116,21 @@ Screen purpose: This is the opening screen of the game,
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    /*
-    By clicking this button, the program sets itself up to play hangman, it reads the userinput for difficulty,
-    styles the radio buttons to be transparent, sends the user's input as a variable to two other pages and
-    switches to the game page.
-    */
-    private void btnPlayGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayGameActionPerformed
+    }
+    
+    private void btnPlayGameActionPerformed(java.awt.event.ActionEvent evt) {
 
         btnEasy.setActionCommand("e");
         btnMedium.setActionCommand("m");
         btnHard.setActionCommand("h");
-        
-        //styles the radio buttons to be transparent
+
         btnEasy.setOpaque(false);
         btnEasy.setContentAreaFilled(false);
         btnEasy.setBorderPainted(false);
         
         difficulty= groupLevel.getSelection().getActionCommand();
         
-        //sends the user input for difficulty to two other pages
+
         mainScreen game =  new mainScreen();
         winScreen win = new winScreen();
         game.hangMan(difficulty);
@@ -151,27 +138,23 @@ Screen purpose: This is the opening screen of the game,
         
         game.setVisible(true);
         this.dispose();
-        
-    }//GEN-LAST:event_btnPlayGameActionPerformed
+    }
 
-    //By clicking this button, the program switches to the scores page  
-    private void btnScoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScoresActionPerformed
+
+    private void btnScoresActionPerformed(java.awt.event.ActionEvent evt) {
         scoreScreen scores= new scoreScreen();
         scores.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnScoresActionPerformed
-    //By clicking this button, the program switches to the rules page 
-    private void btnRulesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRulesActionPerformed
+    }
+    
+    private void btnRulesActionPerformed(java.awt.event.ActionEvent evt) {
         rulesScreen rules= new rulesScreen();
         rules.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnRulesActionPerformed
+    }
 
     public static void main(String args[]) {
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -198,7 +181,6 @@ Screen purpose: This is the opening screen of the game,
         });
     }
     
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton btnEasy;
     private javax.swing.JRadioButton btnHard;
     private javax.swing.JRadioButton btnMedium;
@@ -210,5 +192,5 @@ Screen purpose: This is the opening screen of the game,
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblTitle1;
     private javax.swing.JPanel panelLayout;
-    // End of variables declaration//GEN-END:variables
+
 }

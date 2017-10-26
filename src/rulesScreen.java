@@ -1,18 +1,12 @@
 public class rulesScreen extends javax.swing.JFrame {
-/*
-Name: Advitya Chhabra
-Date: July 26 2017
-Assignment: Summative
-Purpose: Create a working hangman game
-Screen purpose: Teaches the user the rules of the game
-*/
+
     public rulesScreen() {
         initComponents();
         
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -25,7 +19,7 @@ Screen purpose: Teaches the user the rules of the game
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
-        btnBack.setFont(new java.awt.Font("Brush Script Std", 0, 24)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Brush Script Std", 0, 24)); 
         btnBack.setForeground(new java.awt.Color(0, 0, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -34,17 +28,17 @@ Screen purpose: Teaches the user the rules of the game
             }
         });
 
-        lblRules.setFont(new java.awt.Font("Brush Script MT", 1, 36)); // NOI18N
+        lblRules.setFont(new java.awt.Font("Brush Script MT", 1, 36)); 
         lblRules.setForeground(new java.awt.Color(255, 255, 255));
         lblRules.setText("Rules");
 
         areaRules.setColumns(20);
-        areaRules.setFont(new java.awt.Font("Candara", 0, 18)); // NOI18N
+        areaRules.setFont(new java.awt.Font("Candara", 0, 18)); 
         areaRules.setRows(5);
         areaRules.setText("Select a difficulty and press the start button \non the opening page. The easy difficulty \ngenerates words of length 4-5, medium is 6-7 \nand hard is 8-9. After guessing the word, input \nyour name so your score can be added to score \nsheet. The score is measured by least amount \nof time taken to guess the word. Have fun!");
         jScrollPane1.setViewportView(areaRules);
 
-        lblBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Advitya\\Documents\\FinalProject_AChhabra\\src\\background.jpg")); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Advitya\\Documents\\FinalProject_AChhabra\\src\\background.jpg")); 
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,20 +78,15 @@ Screen purpose: Teaches the user the rules of the game
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
-    //clicking this button switches back to the opening screen
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+    }
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {
         openingScreen start = new openingScreen();
         start.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnBackActionPerformed
+    }/
 
     public void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+      
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -124,12 +113,11 @@ Screen purpose: Teaches the user the rules of the game
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaRules;
     private javax.swing.JButton btnBack;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblRules;
-    // End of variables declaration//GEN-END:variables
+
 }
